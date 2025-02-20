@@ -1,31 +1,9 @@
-import {createMemoryHistory, createRouter} from 'vue-router'
-import login from '../views/login.vue'
-// import layout from '../layout/index.vue'
-
-
-const routes = [
-    // {
-    //     path: '/layout',
-    //     component: layout,
-    //     // children: [
-    //     //     {
-    //     //         path: '/home',
-    //     //         component: () => import('../views/Home.vue'),
-    //     //     },
-    //     // ]
-    // },
-    {
-        path: '/login',
-        component: login
-    },
-    {
-        path: "/home",
-        name: "home",
-        component: () => import('../views/Home.vue'),
-    }
-]
+// 创建一个路由器并暴露出去
+import {createRouter, createWebHistory} from 'vue-router'
+import routes from './routes.ts'
 
 export default createRouter({
-    history: createMemoryHistory(),
-    routes,
+    // 路由器工作模式
+    history: createWebHistory(),
+    routes
 })
