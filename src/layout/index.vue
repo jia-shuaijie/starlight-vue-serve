@@ -6,13 +6,11 @@ import LayoutMenu from './LayoutMenu.vue'
 <template>
   <div class="layout-common">
     <el-container>
-      <el-header class="layout-header">
-        <HeaderLayout/>
-      </el-header>
-      <el-container class="layout-bottom">
-        <el-aside class="layout-menu" width="200px">
-          <LayoutMenu/>
-        </el-aside>
+      <el-aside  class="layout-menu"><LayoutMenu/></el-aside>
+      <el-container>
+        <el-header class="layout-header">
+          <HeaderLayout/>
+        </el-header>
         <el-main class="layout-main">
           <router-view/>
         </el-main>
@@ -24,24 +22,24 @@ import LayoutMenu from './LayoutMenu.vue'
 
 <style scoped>
 .layout-common {
+
   height: 100vh;
 }
 
 .layout-main {
-  width: calc(100vw - 200px);
+  padding: 0 0;
 }
 
 .layout-menu {
-  background-color: bisque;
+  height: 100vh;
+  width: 200px;
 }
 
 .layout-header {
+  width: calc(100vw - 200px);
+  padding: 0 0;
   background-color: #2d3b51;
   color: white;
   height: 50px;
-}
-
-.layout-bottom {
-  height: calc(100vh - 50px);
 }
 </style>
